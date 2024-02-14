@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Test</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="wrapper">
+            <div class="love text-center">
+                <h2 id="loveMessage">Do <span><span>You </span> love</span> me😂</h2>
+                <a id="no" href="#" class="btn me-3 px-3">No</a>
+                <a id="yes" href="#" class="btn px-3">Yes</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var messageCounter = 0;
+        var yesMessages = [
+            "SO i can call You My baby",
+            "You will Spend the rest of your life with me😚",
+            "And I can call You my woman🥰"
+        ];
+
+        var noMessages = [
+            "Babe PLeasee😥",
+            "NOOOOOOOOOOOOO",
+            "You want to break my heart😫"
+        ];
+
+        document.getElementById('yes').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+            showMessageAndRedirect(true);
+        });
+
+        document.getElementById('no').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+            showMessageAndRedirect(false);
+        });
+
+        function showMessageAndRedirect(isYes) {
+            var loveMessageElement = document.getElementById('loveMessage');
+
+            var messages = isYes ? yesMessages : noMessages;
+
+            if (messageCounter < messages.length) {
+                // Display the next message
+                loveMessageElement.innerText = messages[messageCounter];
+                messageCounter++;
+            } else {
+                // Redirect to different pages based on Yes or No
+                if (isYes) {
+                    window.location.href = "yes"; // Change the URL to your final page for Yes
+                } else {
+                    window.location.href = "no"; // Change the URL to your final page for No
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

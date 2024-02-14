@@ -1,0 +1,38 @@
+.yes img {
+  height: 30px;
+  width: 30px;
+  animation: image 4s linear infinite;
+}
+.wrapper {
+  padding: 50px;
+  border: 1px black;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 10px;
+  background-color: white;
+}
+#no,
+#yes {
+  background-color: rgb(197, 77, 77);
+}
+@keyframes image {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+body {
+  background-color: pink;
+}
+.wrappers {
+  padding: 50px;
+  border: 1px black;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 400px;
+}

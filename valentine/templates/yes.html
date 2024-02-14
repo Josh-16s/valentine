@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yes mood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom CSS */
+        #bear {
+            max-width: 50%;
+            /* Adjust the size of the image as needed */
+            animation: moveBear 2s ease-in-out infinite alternate;
+            /* Add animation */
+        }
+
+        @keyframes moveBear {
+            0% {
+                transform: translateX(-10px);
+            }
+
+            100% {
+                transform: translateX(10px);
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .wrapper {
+            text-align: center;
+            display: block;
+            overflow-y: auto;
+        }
+
+        .thank-you {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .home-link {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px;
+            bottom: 0px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="thank-you">Thank you😂!</div>
+            <img src="{% static '/img/cute-bear-couple-kissing-vector-1222585.jpg'%}" id="bear" alt="">
+            <a href="{% url 'index' %}" class="home-link">Back to Home</a>
+
+        </div>
+    </div>
+</body>
+
+</html>
